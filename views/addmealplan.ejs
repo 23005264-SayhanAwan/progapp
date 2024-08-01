@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <%- include ('partials/navbar.ejs') %>
+        <title>Add Meal Plan(Admin Side)</title>
+    </head>
+<body>
+    
+              </li> 
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <br>
+        <div class="text-center"><h2>Add New Mealplan</h2></div>
+        <br>
+        <div class="text-center">
+            <form action="/addmealplan" method="POST">
+                <label for="plan_name">Mealplan Name:</label><br>
+                <input type="text" id="plan_name" name="plan_name" required><br><br>
+
+                <label for="description">Description:</label><br>
+                <textarea row="5" col="30" id="description" name="description" required></textarea><br><br>
+
+                <label for="dietry_category">Dietary Category:</label><br>
+                <input type="text" id="dietry_category" name="dietry_category"  required><br><br>
+
+                <label for="price">Price:</label><br>
+                <input type="text" id="price" name="price" required><br><br>
+
+                <button type="submit">Add Mealplan</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

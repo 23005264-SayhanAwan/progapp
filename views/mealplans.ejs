@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Mealmaker - Meal Plans</title>
+    <%- include ('partials/navbar.ejs') %>
+    <table class="table table-hover small text-center">
+        <thead>
+          <tr>
+            <th width="100">Meal Set</th>
+            <th width="100">Description</th>
+            <th width="50">Dietary Category</th>
+            <th width="50">Price</th>
+            <th width="50">Delete</th>
+            <th width="50">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let i=0; i < mealplans.length; i++) { %>
+            <tr>
+              <td><%= mealplans[i].plan_name %></a></td>
+              <td><%= mealplans[i].description %></a></td>
+              <td><%= mealplans[i].dietry_category %></td>
+              <td>$<%= parseFloat(mealplans[i].price).toFixed(2) %></td>
+              <td><a href="/deletemealplan/<%= mealplans[i].meal_id %>" onclick="return confirm('are you sure you want to delete this meal?')">Delete</a></td>
+              <td><a href="/editmeals/<%= mealplans[i].meal_id %>">Edit</a></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+ 
+
+</body>
+</html>
